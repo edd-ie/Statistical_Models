@@ -1,0 +1,12 @@
+# ninja log v6
+7	865	7662222394029720	CMakeFiles/MachineLearning.dir/main.cpp.obj	9c51b912bd586eb1
+22	742	7662223779658771	CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj	fcff988c01a369ef
+18	1240	7662224543797205	CMakeFiles/MachineLearning.dir/Dataset.cpp.obj	f5c575667bb82a3f
+1240	1430	7662224556016796	MachineLearning.exe	64a970f2e69d0109
+3	305	7662227176201969	build.ninja	7cd121a0e056fd57
+15	102	7662216745898105	CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj	7c9f403adf4e419a
+30	127	7662227230950913	CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj	2268e019644e0b1a
+34	876	7662227230990915	CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj	432fbec1ad6da2d
+21	1042	7662227230860882	CMakeFiles/MachineLearning.dir/main.cpp.obj	7449a88b4fa2bd4e
+26	1438	7662227230910914	CMakeFiles/MachineLearning.dir/Dataset.cpp.obj	76e7b774a6a6695
+1439	1626	7662227245040937	MachineLearning.exe	64a970f2e69d0109
