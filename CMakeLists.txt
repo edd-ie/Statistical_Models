@@ -9,4 +9,6 @@ add_executable(MachineLearning main.cpp
         Utilities/Logger.h
         Utilities/Logger.cpp
         Utilities/FileReader.cpp
-        Utilities/FileReader.h)
+        Utilities/FileReader.h
+        Tables/ZScore.h
+        Tables/ZScore.cpp)
