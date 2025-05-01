@@ -31,7 +31,7 @@ inline string readFileIntoString(const string& path) {
     return ss.str();
 }
 
-// Convert string to a double
+// Convert a string to a double
 inline double stringToDouble(const std::string& str) {
     std::stringstream ss(str);
     double result;
@@ -42,6 +42,25 @@ inline double stringToDouble(const std::string& str) {
         if (ss >> remaining) {
             // There were extra characters, so the conversion failed.
             Logger::log(1, "%s: Error with string to double conversion.\n", __FUNCTION__);
+            throw std::invalid_argument("String contains non-numeric characters after the double.");
+        }
+        return result;
+    }
+    // The string could not be converted to a double.
+    Logger::log(1, "%s: Error with string to double conversion.\n", __FUNCTION__);
+    throw std::invalid_argument("String is not a valid double.");
+}
+
+inline double stringToInt(const std::string& str) {
+    std::stringstream ss(str);
+    int result;
+
+    if (ss >> result) {
+        // Check if there are any remaining characters after the double was read.
+        char remaining;
+        if (ss >> remaining) {
+            // There were extra characters, so the conversion failed.
+            Logger::log(1, "%s: Error with string to int conversion.\n", __FUNCTION__);
             throw std::invalid_argument("String contains non-numeric characters after the double.");
         }
         return result;

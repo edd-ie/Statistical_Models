@@ -1,10 +1,12 @@
 #include <iostream>
 #include <memory>
-
-#include "Dataset.h"
-
 #include <cmath>
 #include <vector>
+
+#include "Dataset.h"
+#include "Tables/ZScore.h"
+
+
 
 // Function to calculate the cumulative distribution function (CDF) for the standard normal distribution
 double normalCDF(double value) {
@@ -42,11 +44,21 @@ int main() {
     // test->importData("../resources/dummy2.csv");
     // test->printData();
 
-    auto zTable = generateZTable();
-    printZTable(zTable);
-    return 0;
+    // auto zTable = generateZTable();
+    // printZTable(zTable);
 
-    //TODO: implement Z-model and T-model
+    //TODO: T-model
+    auto zModel = std::make_unique<ZScore>();
+    // Forward lookup
+    double zval = 2.0;
+    double zdec = 0.05;
+    double prob = zModel->getProbability(zval, zdec); // Gets probability for Z=-3.7, decimal=0.05
+
+    // Gets Z-score for probability
+    double alpha = 0.7881;
+    double z = zModel->getScore(alpha);
+
+    printf("P(X < %.2f) = %.4f\nZscore(%.4f) = %.2f\n", (zval+zdec), prob, alpha, z);
 
     return 0;
 }
