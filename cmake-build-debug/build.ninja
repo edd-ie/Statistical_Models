@@ -79,6 +79,12 @@ build CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj: CXX_COMPILER__Machin
   OBJECT_DIR = CMakeFiles\MachineLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\MachineLearning.dir\Tables
 
+build CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj: CXX_COMPILER__MachineLearning_unscanned_Debug X$:/Code/C++/Statistics/Models/BlackScholes.cpp || cmake_object_order_depends_target_MachineLearning
+  DEP_FILE = CMakeFiles\MachineLearning.dir\Models\BlackScholes.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\MachineLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\MachineLearning.dir\Models
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MachineLearning
@@ -87,7 +93,7 @@ build CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj: CXX_COMPILER__Machin
 #############################################
 # Link the executable MachineLearning.exe
 
-build MachineLearning.exe: CXX_EXECUTABLE_LINKER__MachineLearning_Debug CMakeFiles/MachineLearning.dir/main.cpp.obj CMakeFiles/MachineLearning.dir/Dataset.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj
+build MachineLearning.exe: CXX_EXECUTABLE_LINKER__MachineLearning_Debug CMakeFiles/MachineLearning.dir/main.cpp.obj CMakeFiles/MachineLearning.dir/Dataset.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\MachineLearning.dir

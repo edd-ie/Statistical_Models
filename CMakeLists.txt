@@ -11,4 +11,6 @@ add_executable(MachineLearning main.cpp
         Utilities/FileReader.cpp
         Utilities/FileReader.h
         Tables/ZScore.h
-        Tables/ZScore.cpp)
+        Tables/ZScore.cpp
+        Models/BlackScholes.h
+        Models/BlackScholes.cpp)
