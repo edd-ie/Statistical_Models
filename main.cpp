@@ -88,7 +88,7 @@ int main() {
     BlackScholes bsc_impl_vol{strike, spot, time_to_exp, rate, payoff_type};
 
     double impl_vol = BlackScholes::impliedVolatility(bsc_impl_vol, mkt_opt_price,
-   init_vol_guess_1, init_vol_guess_2 , tol, max_iter);
+       init_vol_guess_1, init_vol_guess_2 , tol, max_iter);
 
 
     if (!std::isnan(impl_vol))

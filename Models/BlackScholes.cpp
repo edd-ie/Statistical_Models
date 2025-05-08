@@ -34,7 +34,7 @@ double BlackScholes::operator()(double vol) {
 *   d1 =  [log(S/X) + (r−q+ 1/2*σ^2) (T −t)]/[σ*sqrt(T−t)]
 *   d2 = d1 - [σ*sqrt(T−t)]
 */
-std::array<double, 2> BlackScholes::computeNormArgs(double volatility) {
+std::array<double, 2> BlackScholes::computeNormArgs(double volatility) const {
     double div = volatility*sqrt(expiryTime);
     double d1 = (log(spotPrice/strikePrice) + (interestRate - dividend + ((volatility*volatility)/2))*expiryTime)/
         div;
@@ -43,17 +43,16 @@ std::array<double, 2> BlackScholes::computeNormArgs(double volatility) {
     return std::array{d1, d2};
 }
 
-double BlackScholes::impliedVolatility(BlackScholes &bsc, double marketPrice, double x0, double x1, double total, unsigned maxIteration) {
-    auto diff = [ &bsc, marketPrice](double x) {
+double BlackScholes::impliedVolatility(BlackScholes &bsc, double marketPrice, double x0, double x1,
+    double total, unsigned maxIteration) {
+
+    auto diff = [&bsc, marketPrice](double x) {
         return bsc(x)-marketPrice;
     };
 
-    double y0 =  diff(x0),
-        y1 = diff(x1),
-        impliedVolatility = 0.0;
-    unsigned counter = 0;
+    double y0 =  diff(x0), y1 = diff(x1), impliedVolatility = 0.0;
 
-    for (counter =0; counter <= maxIteration; ++counter) {
+    for (unsigned counter = 0; counter <= maxIteration; ++counter) {
         // x0, x1: store previous and updated volatility values
         // through each iteration.
         // y0, y1: store previous and updated values of

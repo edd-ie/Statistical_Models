@@ -1,9 +1,17 @@
 # ninja log v6
+12	2506	7683488576207234	CMakeFiles/MachineLearning.dir/main.cpp.obj	7449a88b4fa2bd4e
 24	1313	7678344049188059	CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj	432fbec1ad6da2d
-13	2907	7683484473573010	CMakeFiles/MachineLearning.dir/main.cpp.obj	7449a88b4fa2bd4e
-2907	3313	7683484502513005	MachineLearning.exe	624373e2d04881bf
 17	1895	7678344049118031	CMakeFiles/MachineLearning.dir/Dataset.cpp.obj	76e7b774a6a6695
-63	1112	7683487444569538	build.ninja	3ff32a10ec810287
-22	212	7678295043385862	CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj	2268e019644e0b1a
+2507	2912	7683488601147088	MachineLearning.exe	624373e2d04881bf
+63	1112	7684265129258884	build.ninja	3ff32a10ec810287
 32	1264	7678344049268081	CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj	c28e5ddd5fcc42b7
+22	212	7678295043385862	CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj	2268e019644e0b1a
 20	1071	7683484473633031	CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj	2628bdc6b66e0fec
+25	1126	7684265129258884	build.ninja	3ff32a10ec810287
+23	335	7684265129957787	CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj	2268e019644e0b1a
+48	1245	7684265130212903	CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj	2628bdc6b66e0fec
+31	1264	7684265130042817	CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj	432fbec1ad6da2d
+40	1268	7684265130122898	CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj	c28e5ddd5fcc42b7
+15	2014	7684265129874382	CMakeFiles/MachineLearning.dir/Dataset.cpp.obj	76e7b774a6a6695
+9	3073	7684265129819177	CMakeFiles/MachineLearning.dir/main.cpp.obj	7449a88b4fa2bd4e
+3073	3846	7684265160466655	MachineLearning.exe	624373e2d04881bf

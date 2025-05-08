@@ -58,7 +58,7 @@ class BlackScholes {
         interestRate;
 
     PayOffType payOffType;
-    std::array<double, 2>computeNormArgs(double volatility);  // function to calculate d1 & d2
+    std::array<double, 2>computeNormArgs(double volatility) const;  // function to calculate d1 & d2
 
 public:
     BlackScholes(double strike_price, double spot_price, double expiry_time,
@@ -71,8 +71,8 @@ public:
         payOffType(pay_off) {}
 
     double operator()(double vol);
-    double static impliedVolatility(BlackScholes &bsc, double marketPrice,
-        double x0, double x1, double total, unsigned max_iter);
+    static double impliedVolatility(BlackScholes &bsc, double marketPrice,
+        double x0, double x1, double total, unsigned maxIteration);
 
 };
 
