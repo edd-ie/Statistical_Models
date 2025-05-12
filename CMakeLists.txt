@@ -13,4 +13,8 @@ add_executable(MachineLearning main.cpp
         Tables/ZScore.h
         Tables/ZScore.cpp
         Models/BlackScholes.h
-        Models/BlackScholes.cpp)
+        Models/BlackScholes.cpp
+        Options/Payoff.cpp
+        Options/Payoff.h
+        Options/OptionInfo.cpp
+        Options/OptionInfo.h)

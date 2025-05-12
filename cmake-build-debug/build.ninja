@@ -85,6 +85,18 @@ build CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj: CXX_COMPILER__
   OBJECT_DIR = CMakeFiles\MachineLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\MachineLearning.dir\Models
 
+build CMakeFiles/MachineLearning.dir/Options/Payoff.cpp.obj: CXX_COMPILER__MachineLearning_unscanned_Debug X$:/Code/C++/Statistics/Options/Payoff.cpp || cmake_object_order_depends_target_MachineLearning
+  DEP_FILE = CMakeFiles\MachineLearning.dir\Options\Payoff.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\MachineLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\MachineLearning.dir\Options
+
+build CMakeFiles/MachineLearning.dir/Options/OptionInfo.cpp.obj: CXX_COMPILER__MachineLearning_unscanned_Debug X$:/Code/C++/Statistics/Options/OptionInfo.cpp || cmake_object_order_depends_target_MachineLearning
+  DEP_FILE = CMakeFiles\MachineLearning.dir\Options\OptionInfo.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\MachineLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\MachineLearning.dir\Options
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MachineLearning
@@ -93,7 +105,7 @@ build CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj: CXX_COMPILER__
 #############################################
 # Link the executable MachineLearning.exe
 
-build MachineLearning.exe: CXX_EXECUTABLE_LINKER__MachineLearning_Debug CMakeFiles/MachineLearning.dir/main.cpp.obj CMakeFiles/MachineLearning.dir/Dataset.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj
+build MachineLearning.exe: CXX_EXECUTABLE_LINKER__MachineLearning_Debug CMakeFiles/MachineLearning.dir/main.cpp.obj CMakeFiles/MachineLearning.dir/Dataset.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj CMakeFiles/MachineLearning.dir/Options/Payoff.cpp.obj CMakeFiles/MachineLearning.dir/Options/OptionInfo.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\MachineLearning.dir
