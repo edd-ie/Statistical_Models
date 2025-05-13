@@ -3,7 +3,11 @@
 31	1264	7684265130042817	CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj	432fbec1ad6da2d
 15	2014	7684265129874382	CMakeFiles/MachineLearning.dir/Dataset.cpp.obj	76e7b774a6a6695
 3073	3846	7684265160466655	MachineLearning.exe	624373e2d04881bf
-25	1126	7687781974053370	build.ninja	3ff32a10ec810287
+25	1126	7688619865086907	build.ninja	3ff32a10ec810287
 40	1268	7684265130122898	CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj	c28e5ddd5fcc42b7
 23	335	7684265129957787	CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj	2268e019644e0b1a
 48	1245	7684265130212903	CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj	2628bdc6b66e0fec
+26	351	7688666242567783	CMakeFiles/MachineLearning.dir/Models/BinomialLattice.cpp.obj	698bcbf94bddaa70
+21	436	7688666242517778	CMakeFiles/MachineLearning.dir/Options/OptionInfo.cpp.obj	1ec3c1d209aa4428
+16	630	7688666242467807	CMakeFiles/MachineLearning.dir/Options/Payoff.cpp.obj	202b77765fd72936
+9	2664	7688666242408189	CMakeFiles/MachineLearning.dir/main.cpp.obj	7449a88b4fa2bd4e

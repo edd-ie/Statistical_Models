@@ -17,4 +17,6 @@ add_executable(MachineLearning main.cpp
         Options/Payoff.cpp
         Options/Payoff.h
         Options/OptionInfo.cpp
-        Options/OptionInfo.h)
+        Options/OptionInfo.h
+        Models/BinomialLattice.cpp
+        Models/BinomialLattice.h)

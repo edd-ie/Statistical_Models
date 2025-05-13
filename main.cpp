@@ -5,9 +5,11 @@
 #include <vector>
 
 #include "Dataset.h"
+#include "Models/BinomialLattice.h"
 #include "Tables/ZScore.h"
 #include "Models/BlackScholes.h"
-
+#include "Options/OptionInfo.h"
+#include "Options/Payoff.h"
 
 
 // Function to calculate the cumulative distribution function (CDF) for the standard normal distribution
@@ -38,29 +40,56 @@ void printZTable(const std::vector<std::vector<double>>& zTable) {
     }
 }
 
+void testBlackScholes();
+
+void testOptionInfo();
+
+void testZmodel();
+
 int main() {
+    testOptionInfo();
 
-    // std::unique_ptr<Dataset> test = make_unique<Dataset>();
-    //
-    // test->importData("../resources/dummy2.csv");
-    // test->printData();
 
-    // auto zTable = generateZTable();
-    // printZTable(zTable);
+    return 0;
+}
 
-    //TODO: T-model
-    //auto zModel = std::make_unique<ZScore>();
-    // // Forward lookup
-    // double zval = 2.0;
-    // double zdec = 0.05;
-    // double prob = zModel->getProbability(zval, zdec); // Gets probability for Z=-3.7, decimal=0.05
-    //
-    // // Gets Z-score for probability
-    // double alpha = 0.7881;
-    // double z = zModel->getScore(alpha);
-    //
-    // printf("P(X < %.2f) = %.4f\nZscore(%.4f) = %.2f\n", (zval+zdec), prob, alpha, z);
+void testOptionInfo() {
+    CallPayoff callPayoff{75.0};
+    OptionInfo callOpt{callPayoff, 0.5};
 
+    BinomialLattice binLattice{callOpt, 0.25, 0.04, 100, 0.02};
+    double optVal = binLattice.calculatePrice(85.0, OptType::American);
+
+    std::cout << format("Test Option info: {}\n", optVal);
+}
+
+
+
+void testZmodel() {
+     std::unique_ptr<Dataset> test = make_unique<Dataset>();
+
+     test->importData("../resources/dummy2.csv");
+     test->printData();
+
+     auto zTable = generateZTable();
+     printZTable(zTable);
+
+    // TODO: T-model
+    auto zModel = std::make_unique<ZScore>();
+     // Forward lookup
+     double zval = 2.0;
+     double zdec = 0.05;
+     double prob = zModel->getProbability(zval, zdec); // Gets probability for Z=-3.7, decimal=0.05
+
+     // Gets Z-score for probability
+     double alpha = 0.7881;
+     double z = zModel->getScore(alpha);
+
+     printf("P(X < %.2f) = %.4f\nZscore(%.4f) = %.2f\n", (zval+zdec), prob, alpha, z);
+}
+
+
+void testBlackScholes() {
     double strike = 75.0;
     auto payoff_type = PayOffType::call;
     double spot = 100.0;
@@ -108,6 +137,4 @@ int main() {
         // but more simply for this example:
         cout << "No convergence to implied volatility\n";
     }
-
-    return 0;
 }
