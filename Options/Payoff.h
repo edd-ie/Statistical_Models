@@ -21,7 +21,7 @@ public:
 class CallPayoff final: public Payoff {
     double strike;
 public:
-    CallPayoff(double strike):strike(strike){}
+    explicit CallPayoff(double strike):strike(strike){}
 
     double payoff(double price) const override;
     CallPayoff* clone() const override;
@@ -31,7 +31,7 @@ public:
 class PutPayoff final: public Payoff {
     double strike;
 public:
-    PutPayoff(double strike):strike(strike){}
+    explicit PutPayoff(double strike):strike(strike){}
 
     double payoff(double price) const override;
     PutPayoff* clone() const override;

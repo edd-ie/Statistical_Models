@@ -8,7 +8,7 @@
 
 
 double CallPayoff::payoff(double price) const {
-    return std::ranges::max(price - strike, 0.0);
+    return std::max(price - strike, 0.0);
 }
 
 CallPayoff *CallPayoff::clone() const {
@@ -18,7 +18,7 @@ CallPayoff *CallPayoff::clone() const {
 
 
 double PutPayoff::payoff(double price) const {
-    return std::ranges::max(price - strike, 0.0);
+    return std::max(price - strike, 0.0);
 }
 
 PutPayoff *PutPayoff::clone() const {

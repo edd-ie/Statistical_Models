@@ -54,10 +54,10 @@ int main() {
 }
 
 void testOptionInfo() {
-    CallPayoff callPayoff{75.0};
-    OptionInfo callOpt{callPayoff, 0.5};
+    auto call_payoff = std::make_unique<CallPayoff>(75.0);
+    OptionInfo call_opt{std::move(call_payoff), 0.5};
 
-    BinomialLattice binLattice{callOpt, 0.25, 0.04, 100, 0.02};
+    BinomialLattice binLattice{call_opt, 0.25, 0.04, 100, 0.02};
     double optVal = binLattice.calculatePrice(85.0, OptType::American);
 
     std::cout << format("Test Option info: {}\n", optVal);

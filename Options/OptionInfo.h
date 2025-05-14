@@ -4,8 +4,10 @@
 
 #ifndef OPTIONINFO_H
 #define OPTIONINFO_H
+
 #include "Payoff.h"
 #include <utility>
+#include <memory>
 
 /**
 * Hold the time to expiration in units of years (or a year fraction)
@@ -18,10 +20,10 @@
 
 class OptionInfo {
     double expirationTime;
-    Payoff* payoff;
+    std::unique_ptr<Payoff> payoff;
 
 public:
-    OptionInfo(const Payoff& payoff, double expTime):expirationTime(expTime), payoff(payoff.clone()){}
+    OptionInfo(std::unique_ptr<Payoff> payoff, double expTime):expirationTime(expTime), payoff(std::move(payoff)){}
     double optionPayoff(double spot) const;
     double timeToExpiry() const;
 
