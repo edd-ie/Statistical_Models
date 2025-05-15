@@ -4,6 +4,7 @@
 
 #ifndef PAYOFF_H
 #define PAYOFF_H
+#include <memory>
 
 /**
 * call and put payoffs for equity options
@@ -13,7 +14,7 @@ class Payoff {
 public:
     //return the payoff value for a given spot underlying price
     virtual double payoff(double price) const = 0; // pure virtual
-    virtual Payoff* clone() const = 0;
+    virtual std::unique_ptr<Payoff> clone() const = 0;
     virtual ~Payoff() =default;
 };
 
@@ -24,7 +25,7 @@ public:
     explicit CallPayoff(double strike):strike(strike){}
 
     double payoff(double price) const override;
-    CallPayoff* clone() const override;
+    std::unique_ptr<Payoff> clone() const override;
 };
 
 
@@ -34,7 +35,7 @@ public:
     explicit PutPayoff(double strike):strike(strike){}
 
     double payoff(double price) const override;
-    PutPayoff* clone() const override;
+    std::unique_ptr<Payoff> clone() const override;
 };
 
 

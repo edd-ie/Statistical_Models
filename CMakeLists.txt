@@ -19,4 +19,6 @@ add_executable(MachineLearning main.cpp
         Options/OptionInfo.cpp
         Options/OptionInfo.h
         Models/BinomialLattice.cpp
-        Models/BinomialLattice.h)
+        Models/BinomialLattice.h
+        Models/MonteCarlo.cpp
+        Models/MonteCarlo.h)

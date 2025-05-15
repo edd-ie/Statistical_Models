@@ -31,14 +31,14 @@ public:
     OptionInfo(const OptionInfo& src):expirationTime(src.expirationTime), payoff(src.payoff->clone()){}
     OptionInfo& operator =(const OptionInfo src);
 
-    // Disabling Move operations are discussed:
-    OptionInfo(OptionInfo&& rhs) = delete;
-    OptionInfo& operator =(OptionInfo&& rhs) = delete;
+    // Move operations:
+    OptionInfo(OptionInfo&& rhs) = default;
+    OptionInfo& operator =(OptionInfo&& rhs) = default;
 
     //swap function
     void swap(OptionInfo& src) noexcept;
 
-    ~OptionInfo();
+    ~OptionInfo() = default;
 };
 
 

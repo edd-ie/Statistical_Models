@@ -11,8 +11,8 @@ double CallPayoff::payoff(double price) const {
     return std::max(price - strike, 0.0);
 }
 
-CallPayoff *CallPayoff::clone() const {
-    return new CallPayoff(*this);
+std::unique_ptr<Payoff> CallPayoff::clone() const {
+    return std::make_unique<CallPayoff>(*this);
 }
 
 
@@ -21,7 +21,7 @@ double PutPayoff::payoff(double price) const {
     return std::max(price - strike, 0.0);
 }
 
-PutPayoff *PutPayoff::clone() const {
-    return new PutPayoff(*this);
+std::unique_ptr<Payoff> PutPayoff::clone() const {
+    return std::make_unique<PutPayoff>(*this);
 }
 

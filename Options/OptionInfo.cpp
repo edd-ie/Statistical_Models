@@ -18,12 +18,12 @@ OptionInfo& OptionInfo::operator=(OptionInfo src) {
     return *this;
 }
 
-OptionInfo::~OptionInfo() {
-    delete payoff;
-}
-
 void OptionInfo::swap(OptionInfo& src) noexcept {
     using std::swap;
     swap(payoff, src.payoff);
     swap(expirationTime, src.expirationTime);
 }
+
+// OptionInfo::~OptionInfo() {
+//     delete payoff;
+// }
