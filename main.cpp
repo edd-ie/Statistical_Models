@@ -12,68 +12,51 @@
 #include "Options/Payoff.h"
 
 
-// Function to calculate the cumulative distribution function (CDF) for the standard normal distribution
-double normalCDF(double value) {
-    return 0.5 * erfc(-value * M_SQRT1_2);
-}
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 
-// Function to generate a Z-table
-std::vector<std::vector<double>> generateZTable() {
-    std::vector<std::vector<double>> zTable(10, std::vector<double>(10));
-    for (int i = 0; i < 10; ++i) {
-        for (int j = 0; j < 10; ++j) {
-            double zValue = i * 0.1 + j * 0.01;
-            zTable[i][j] = normalCDF(zValue);
-        }
-    }
-    return zTable;
-}
-
-// Function to print the Z-table
-void printZTable(const std::vector<std::vector<double>>& zTable) {
-    std::cout << "Z-Table:\n";
-    for (const auto& row : zTable) {
-        for (double value : row) {
-            std::cout << value << " ";
-        }
-        std::cout << "\n";
-    }
-}
+#include "curl/curl.h"
+// #include <nlohmann/json.hpp>
 
 void testBlackScholes();
-
 void testOptionInfo();
-
 void testZmodel();
+// using json = nlohmann::json;
 
 int main() {
-    testOptionInfo();
+    // testOptionInfo();
 
+    CURL* curl = curl_easy_init();
+    if (curl) {
+        std::string url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=YOUR_API_KEY&datatype=json";
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+
+        if (CURLcode response = curl_easy_perform(curl); response != CURLE_OK) {
+            std::cout << "Failed to fetch: " << curl_easy_strerror(response) << std::endl;
+        } else {
+            // Handle success
+        }
+    }
+
+
+    curl_easy_cleanup(curl);
 
     return 0;
 }
 
-void testOptionInfo() {
-    auto call_payoff = std::make_unique<CallPayoff>(75.0);
-    OptionInfo call_opt{std::move(call_payoff), 0.5};
-
-    BinomialLattice binLattice{call_opt, 0.25, 0.04, 100, 0.02};
-    double optVal = binLattice.calculatePrice(85.0, OptType::American);
-
-    std::cout << format("Test Option info: {}\n", optVal);
-}
+// void testOptionInfo() {
+//     auto call_payoff = std::make_unique<CallPayoff>(75.0);
+//     OptionInfo call_opt{std::move(call_payoff), 0.5};
+//
+//     BinomialLattice binLattice{call_opt, 0.25, 0.04, 100, 0.02};
+//     double optVal = binLattice.calculatePrice(85.0, OptType::American);
+//
+//     std::cout << format("Test Option info: {}\n", optVal);
+// }
 
 
 
 void testZmodel() {
-     std::unique_ptr<Dataset> test = make_unique<Dataset>();
-
-     test->importData("../resources/dummy2.csv");
-     test->printData();
-
-     auto zTable = generateZTable();
-     printZTable(zTable);
-
     // TODO: T-model
     auto zModel = std::make_unique<ZScore>();
      // Forward lookup

@@ -3,6 +3,13 @@ project(MachineLearning)
 
 set(CMAKE_CXX_STANDARD 26)
 
+# Find CURL package installed by vcpkg
+find_package(CURL CONFIG REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
+
+
+
+
 add_executable(MachineLearning main.cpp
         Dataset.h
         Dataset.cpp
@@ -22,3 +29,7 @@ add_executable(MachineLearning main.cpp
         Models/BinomialLattice.h
         Models/MonteCarlo.cpp
         Models/MonteCarlo.h)
+
+# Link against CURL
+target_link_libraries(${PROJECT_NAME} PRIVATE CURL::libcurl nlohmann_json::nlohmann_json)
+set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)

@@ -1,0 +1,14 @@
+{
+  "name" : "machinelearning",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "f26ec398c25c4980f33a50391f00a75f7ad62ef7",
+  "dependencies" : [ {
+    "name" : "curl",
+    "version>=" : "8.13.0#1"
+  },
+    {
+      "name": "nlohmann-json",
+      "version>=": "3.11.3"
+    }
+  ]
+}

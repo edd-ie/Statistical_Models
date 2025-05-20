@@ -1,4 +1,28 @@
-"C:\Program Files\JetBrains\CLion 2024.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S X:\Code\C++\Statistics -B X:\Code\C++\Statistics\cmake-build-debug
--- Configuring done (0.8s)
--- Generating done (0.1s)
+"C:\Program Files\JetBrains\CLion 2024.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.3/bin/ninja/win/x64/ninja.exe" -DCMAKE_TOOLCHAIN_FILE=C:\Users\_edd.ie_\.vcpkg-clion\vcpkg\scripts\buildsystems\vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-mingw-dynamic -G Ninja -S X:\Code\C++\Statistics -B X:\Code\C++\Statistics\cmake-build-debug
+-- Running vcpkg install
+Detecting compiler hash for triplet x64-mingw-dynamic...
+Compiler found: C:/Program Files/JetBrains/CLion 2024.3/bin/mingw/bin/g++.exe
+All requested packages are currently installed.
+Total install time: 483 us
+curl is compatible with built-in CMake targets:
+
+    find_package(CURL REQUIRED)
+    target_link_libraries(main PRIVATE CURL::libcurl)
+
+The package nlohmann-json provides CMake targets:
+
+    find_package(nlohmann_json CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE nlohmann_json::nlohmann_json)
+
+The package nlohmann-json can be configured to not provide implicit conversions via a custom triplet file:
+
+    set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)
+
+For more information, see the docs here:
+    
+    https://json.nlohmann.me/api/macros/json_use_implicit_conversions/
+
+-- Running vcpkg install - done
+-- Configuring done (2.8s)
+-- Generating done (0.0s)
 -- Build files have been written to: X:/Code/C++/Statistics/cmake-build-debug
