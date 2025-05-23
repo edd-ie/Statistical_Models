@@ -5,6 +5,7 @@
 #ifndef BLACKSCHOLES_H
 #define BLACKSCHOLES_H
 #include <array>
+#include <map>
 
 /**
 * Black-Scholes pricing formula
@@ -49,6 +50,14 @@ enum class PayOffType {
     put = -1
 };
 
+enum class RiskValues {
+    Delta,
+    Gamma,
+    Vega,
+    Rho,
+    Theta
+};
+
 
 class BlackScholes {
     double strikePrice,
@@ -58,7 +67,9 @@ class BlackScholes {
         interestRate;
 
     PayOffType payOffType;
-    std::array<double, 2>computeNormArgs(double volatility) const;  // function to calculate d1 & d2
+
+    [[nodiscard]] std::array<double, 2>computeNormArgs(double volatility) const;  // function to calculate d1 & d2
+    double norm_cdf(double volatility) const;
 
 public:
     BlackScholes(double strike_price, double spot_price, double expiry_time,
@@ -74,6 +85,7 @@ public:
     static double impliedVolatility(BlackScholes &bsc, double marketPrice,
         double x0, double x1, double total, unsigned maxIteration);
 
+    std::map<RiskValues, double> riskValues(double volatility);
 };
 
 

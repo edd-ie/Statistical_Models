@@ -77,3 +77,44 @@ double BlackScholes::impliedVolatility(BlackScholes &bsc, double marketPrice, do
 }
 
 
+std::map<RiskValues, double> BlackScholes::riskValues(double volatility) {
+    using std::exp, std::sqrt;
+
+    std::map<RiskValues, double> results;
+
+    auto norm_args = computeNormArgs(volatility);
+    double d1 = norm_args[0];
+    double d2 = norm_args[1];
+
+    int phi = static_cast<int>(payOffType);
+
+    double nd_1 = norm_cdf(phi * d1);        // N(d1)
+    double nd_2 = norm_cdf(phi * d2);        // N(d2)
+    double disc_fctr = exp(-interestRate * expiryTime);
+
+    // N'(x): Standard Normal PDF:
+    auto norm_pdf = [](double x) {
+        return (1.0 / std::numbers::sqrt2) * exp(-x);
+    };
+
+    double delta = phi * exp(-dividend * expiryTime) * nd_1;
+    double gamma = exp(-dividend * expiryTime) * norm_pdf(d1)
+        / (spotPrice * volatility * sqrt(expiryTime));
+    double vega = spotPrice * spotPrice * gamma * volatility * expiryTime;
+    double rho = phi * expiryTime * strikePrice * disc_fctr * nd_2;
+    double theta = phi * dividend * spotPrice * exp(-dividend * expiryTime) * nd_1
+        - phi * interestRate * strikePrice * exp(-interestRate * expiryTime) * nd_2
+        - spotPrice * exp(-dividend * expiryTime) * norm_pdf(d1)
+        * volatility / (2.0 * sqrt(expiryTime));
+
+    // DELTA, GAMMA, VEGA, RHO, THETA
+    results.insert({RiskValues::Delta, delta});
+    results.insert({RiskValues::Gamma, gamma});
+    results.insert({RiskValues::Vega, vega});
+    results.insert({RiskValues::Rho, rho});
+    results.insert({RiskValues::Theta, theta});
+    return results;
+    
+}
+
+
