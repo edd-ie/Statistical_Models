@@ -1,9 +1,9 @@
 # ninja log v6
 24	1361	7693839609489521	CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj	58da806683f16947
-9	3462	7693843756704969	CMakeFiles/MachineLearning.dir/main.cpp.obj	5f790d237b2da2cb
-3073	3846	7684265160466655	MachineLearning.exe	624373e2d04881bf
+12	3415	7693846575471280	CMakeFiles/MachineLearning.dir/main.cpp.obj	5f790d237b2da2cb
+3416	7982	7693846609511484	MachineLearning.exe	96c37635f57c9351
 15	2322	7693839609399500	CMakeFiles/MachineLearning.dir/Dataset.cpp.obj	5b10802665b986de
-13	4186	7693845774837068	build.ninja	3ff32a10ec810287
+13	4186	7708507730899177	build.ninja	3ff32a10ec810287
 29	1297	7693839609539511	CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj	b17425c1665c6f3c
 19	225	7693839609449495	CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj	2936e7ef2ba26052
 33	1237	7693839609589518	CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj	f583e39f8d14dfd1
@@ -11,6 +11,11 @@
 1237	2497	7693839621629526	CMakeFiles/MachineLearning.dir/Options/OptionInfo.cpp.obj	42493295d687ed75
 225	1963	7693839611509547	CMakeFiles/MachineLearning.dir/Options/Payoff.cpp.obj	ea7b6326bbe1959d
 1362	2536	7693839622869519	CMakeFiles/MachineLearning.dir/Models/MonteCarlo.cpp.obj	40a1259e772ccd3c
-12	3497	7693845955736141	CMakeFiles/MachineLearning.dir/main.cpp.obj	5f790d237b2da2cb
-12	3415	7693846575471280	CMakeFiles/MachineLearning.dir/main.cpp.obj	5f790d237b2da2cb
-3416	7982	7693846609511484	MachineLearning.exe	96c37635f57c9351
+27	2403	7708513675702415	CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj	f583e39f8d14dfd1
+43	2851	7708513675872428	CMakeFiles/MachineLearning.dir/Models/EquityPriceGenerator.cpp.obj	bd8060f89177546f
+33	3472	7708513675772420	CMakeFiles/MachineLearning.dir/Models/MonteCarlo.cpp.obj	40a1259e772ccd3c
+51	5696	7708513675952464	CMakeFiles/MachineLearning.dir/TestFile.cpp.obj	516ea9861e866201
+16	7259	7708513675592425	CMakeFiles/MachineLearning.dir/main.cpp.obj	5f790d237b2da2cb
+17	3993	7708514157947580	CMakeFiles/MachineLearning.dir/TestFile.cpp.obj	516ea9861e866201
+11	5302	7708514157877522	CMakeFiles/MachineLearning.dir/main.cpp.obj	5f790d237b2da2cb
+13	4436	7708514562281392	CMakeFiles/MachineLearning.dir/main.cpp.obj	5f790d237b2da2cb

@@ -119,6 +119,20 @@ build CMakeFiles/MachineLearning.dir/Models/MonteCarlo.cpp.obj: CXX_COMPILER__Ma
   OBJECT_DIR = CMakeFiles\MachineLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\MachineLearning.dir\Models
 
+build CMakeFiles/MachineLearning.dir/Models/EquityPriceGenerator.cpp.obj: CXX_COMPILER__MachineLearning_unscanned_Debug X$:/Code/C++/Statistics/Models/EquityPriceGenerator.cpp || cmake_object_order_depends_target_MachineLearning
+  DEP_FILE = CMakeFiles\MachineLearning.dir\Models\EquityPriceGenerator.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -isystem X:/Code/C++/Statistics/cmake-build-debug/vcpkg_installed/x64-mingw-dynamic/include
+  OBJECT_DIR = CMakeFiles\MachineLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\MachineLearning.dir\Models
+
+build CMakeFiles/MachineLearning.dir/TestFile.cpp.obj: CXX_COMPILER__MachineLearning_unscanned_Debug X$:/Code/C++/Statistics/TestFile.cpp || cmake_object_order_depends_target_MachineLearning
+  DEP_FILE = CMakeFiles\MachineLearning.dir\TestFile.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -isystem X:/Code/C++/Statistics/cmake-build-debug/vcpkg_installed/x64-mingw-dynamic/include
+  OBJECT_DIR = CMakeFiles\MachineLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\MachineLearning.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MachineLearning
@@ -127,7 +141,7 @@ build CMakeFiles/MachineLearning.dir/Models/MonteCarlo.cpp.obj: CXX_COMPILER__Ma
 #############################################
 # Link the executable MachineLearning.exe
 
-build MachineLearning.exe: CXX_EXECUTABLE_LINKER__MachineLearning_Debug CMakeFiles/MachineLearning.dir/main.cpp.obj CMakeFiles/MachineLearning.dir/Dataset.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj CMakeFiles/MachineLearning.dir/Options/Payoff.cpp.obj CMakeFiles/MachineLearning.dir/Options/OptionInfo.cpp.obj CMakeFiles/MachineLearning.dir/Models/BinomialLattice.cpp.obj CMakeFiles/MachineLearning.dir/Models/MonteCarlo.cpp.obj | vcpkg_installed/x64-mingw-dynamic/debug/lib/libcurl-d.dll.a
+build MachineLearning.exe: CXX_EXECUTABLE_LINKER__MachineLearning_Debug CMakeFiles/MachineLearning.dir/main.cpp.obj CMakeFiles/MachineLearning.dir/Dataset.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/Logger.cpp.obj CMakeFiles/MachineLearning.dir/Utilities/FileReader.cpp.obj CMakeFiles/MachineLearning.dir/Tables/ZScore.cpp.obj CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj CMakeFiles/MachineLearning.dir/Options/Payoff.cpp.obj CMakeFiles/MachineLearning.dir/Options/OptionInfo.cpp.obj CMakeFiles/MachineLearning.dir/Models/BinomialLattice.cpp.obj CMakeFiles/MachineLearning.dir/Models/MonteCarlo.cpp.obj CMakeFiles/MachineLearning.dir/Models/EquityPriceGenerator.cpp.obj CMakeFiles/MachineLearning.dir/TestFile.cpp.obj | vcpkg_installed/x64-mingw-dynamic/debug/lib/libcurl-d.dll.a
   FLAGS = -g
   LINK_LIBRARIES = vcpkg_installed/x64-mingw-dynamic/debug/lib/libcurl-d.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\MachineLearning.dir

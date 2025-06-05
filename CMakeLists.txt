@@ -28,7 +28,10 @@ add_executable(MachineLearning main.cpp
         Models/BinomialLattice.cpp
         Models/BinomialLattice.h
         Models/MonteCarlo.cpp
-        Models/MonteCarlo.h)
+        Models/MonteCarlo.h
+        Models/EquityPriceGenerator.cpp
+        Models/EquityPriceGenerator.h
+        TestFile.cpp)
 
 # Link against CURL
 target_link_libraries(${PROJECT_NAME} PRIVATE CURL::libcurl nlohmann_json::nlohmann_json)
