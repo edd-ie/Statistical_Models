@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/zlib-x64-mingw-dynamic-1.3.1-86de5495-dd86-46c7-83d2-45d455464346",
-  "name": "zlib:x64-mingw-dynamic@1.3.1 c2902c4452fa0d8fb5fed07215b72797f842078833da2a25d78bb49f48ba08c6",
+  "documentNamespace": "https://spdx.org/spdxdocs/zlib-x64-mingw-dynamic-1.3.1-0a6d0516-c6e0-47bf-be86-778bd363db89",
+  "name": "zlib:x64-mingw-dynamic@1.3.1 193dc2d5375abcf385d530f5241782e0b3d1da831c4bf4528a25099869881ce4",
   "creationInfo": {
     "creators": [
       "Tool: vcpkg-2025-04-16-f9b6c6917b23c1ccf16c1a9f015ebabf8f615045"
     ],
-    "created": "2025-05-19T02:35:16Z"
+    "created": "2025-06-06T17:21:43Z"
   },
   "relationships": [
     {
@@ -103,7 +103,7 @@
       "name": "zlib",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "1.3.1",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/zlib",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg@3f05e04b9aededb96786a911a16193cdb711f0c9",
       "homepage": "https://www.zlib.net/",
       "licenseConcluded": "Zlib",
       "licenseDeclared": "NOASSERTION",
@@ -114,7 +114,7 @@
     {
       "name": "zlib:x64-mingw-dynamic",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "c2902c4452fa0d8fb5fed07215b72797f842078833da2a25d78bb49f48ba08c6",
+      "versionInfo": "193dc2d5375abcf385d530f5241782e0b3d1da831c4bf4528a25099869881ce4",
       "downloadLocation": "NONE",
       "licenseConcluded": "Zlib",
       "licenseDeclared": "NOASSERTION",

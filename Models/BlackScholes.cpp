@@ -118,3 +118,7 @@ std::map<RiskValues, double> BlackScholes::riskValues(double volatility) {
 }
 
 
+double BlackScholes::norm_cdf(double x) const{
+    return (1.0 + std::erf(x / std::numbers::sqrt2)) / 2.0;
+}
+

@@ -2,8 +2,8 @@
 #include <windows.h>
 
 #include "curl/curl.h"
+#include "Test/TestFile.h"
 
-#include "./TestFile.cpp"
 
 // #include <nlohmann/json.hpp>
 
@@ -12,6 +12,14 @@
 int main() {
     // testOptionInfo();
 
+    testBlackScholes();
+    testMonteCarlo();
+
+    return 0;
+}
+
+
+void apiTest() {
     CURL* curl = curl_easy_init();
     if (curl) {
         std::string url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=YOUR_API_KEY&datatype=json";
@@ -26,6 +34,4 @@ int main() {
 
 
     curl_easy_cleanup(curl);
-
-    return 0;
 }

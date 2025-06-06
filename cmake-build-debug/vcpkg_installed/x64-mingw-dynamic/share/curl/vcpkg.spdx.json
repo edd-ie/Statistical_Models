@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/curl-x64-mingw-dynamic-8.13.0#1-7dd1179d-1d0e-4e77-9a10-de623a37adf6",
-  "name": "curl:x64-mingw-dynamic@8.13.0#1 48d0532ea0e33ff12da76d15f83316ec4465bc75df1d1a25279d211407c0d5b5",
+  "documentNamespace": "https://spdx.org/spdxdocs/curl-x64-mingw-dynamic-8.13.0#1-46121f5c-c813-4be1-8627-84c89195d483",
+  "name": "curl:x64-mingw-dynamic@8.13.0#1 8214ab35fa9c12914692498c6e3d040d29161edc85cbe22887f7a1ed40ef084a",
   "creationInfo": {
     "creators": [
       "Tool: vcpkg-2025-04-16-f9b6c6917b23c1ccf16c1a9f015ebabf8f615045"
     ],
-    "created": "2025-05-19T02:39:04Z"
+    "created": "2025-06-06T17:25:09Z"
   },
   "relationships": [
     {
@@ -123,7 +123,7 @@
       "name": "curl",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "8.13.0#1",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/curl",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg@e0b645f9e08afb96b7d7eda9489663ffa41bf7c1",
       "homepage": "https://curl.se/",
       "licenseConcluded": "curl AND ISC AND BSD-3-Clause",
       "licenseDeclared": "NOASSERTION",
@@ -134,7 +134,7 @@
     {
       "name": "curl:x64-mingw-dynamic",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "48d0532ea0e33ff12da76d15f83316ec4465bc75df1d1a25279d211407c0d5b5",
+      "versionInfo": "8214ab35fa9c12914692498c6e3d040d29161edc85cbe22887f7a1ed40ef084a",
       "downloadLocation": "NONE",
       "licenseConcluded": "curl AND ISC AND BSD-3-Clause",
       "licenseDeclared": "NOASSERTION",

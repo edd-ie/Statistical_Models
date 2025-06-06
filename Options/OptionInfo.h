@@ -19,21 +19,21 @@
 
 
 class OptionInfo {
-    double expirationTime;
     std::unique_ptr<Payoff> payoff;
+    double expirationTime;
 
 public:
-    OptionInfo(std::unique_ptr<Payoff> payoff, double expTime):expirationTime(expTime), payoff(std::move(payoff)){}
+    OptionInfo(std::unique_ptr<Payoff> payoff, double expTime):payoff(std::move(payoff)), expirationTime(expTime){}
     double optionPayoff(double spot) const;
     double timeToExpiry() const;
 
     // Copy operations:
-    OptionInfo(const OptionInfo& src):expirationTime(src.expirationTime), payoff(src.payoff->clone()){}
-    OptionInfo& operator =(const OptionInfo src);
+    OptionInfo(const OptionInfo& src): payoff(src.payoff->clone()), expirationTime(src.timeToExpiry()){}
+    OptionInfo& operator =(const OptionInfo& src) noexcept;
 
     // Move operations:
     OptionInfo(OptionInfo&& rhs) = default;
-    OptionInfo& operator =(OptionInfo&& rhs) = default;
+    OptionInfo& operator =(OptionInfo&& src) = default;
 
     //swap function
     void swap(OptionInfo& src) noexcept;

@@ -3,7 +3,7 @@
 Detecting compiler hash for triplet x64-mingw-dynamic...
 Compiler found: C:/Program Files/JetBrains/CLion 2024.3/bin/mingw/bin/g++.exe
 All requested packages are currently installed.
-Total install time: 1.23 ms
+Total install time: 496 us
 curl is compatible with built-in CMake targets:
 
     find_package(CURL REQUIRED)
@@ -23,6 +23,6 @@ For more information, see the docs here:
     https://json.nlohmann.me/api/macros/json_use_implicit_conversions/
 
 -- Running vcpkg install - done
--- Configuring done (4.1s)
--- Generating done (0.1s)
+-- Configuring done (3.2s)
+-- Generating done (0.0s)
 -- Build files have been written to: X:/Code/C++/Statistics/cmake-build-debug

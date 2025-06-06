@@ -13,17 +13,15 @@ double OptionInfo::timeToExpiry() const {
 }
 
 
-OptionInfo& OptionInfo::operator=(OptionInfo src) {
-    swap(src);
-    return *this;
-}
-
 void OptionInfo::swap(OptionInfo& src) noexcept {
     using std::swap;
     swap(payoff, src.payoff);
     swap(expirationTime, src.expirationTime);
 }
 
-// OptionInfo::~OptionInfo() {
-//     delete payoff;
-// }
+// Copy Assignment:
+
+OptionInfo& OptionInfo::operator =(const OptionInfo& src) noexcept{
+    OptionInfo{src}.swap(*this);
+    return *this;
+}
