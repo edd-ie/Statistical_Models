@@ -14,6 +14,7 @@
 #include <vector>
 #include <numeric>            // std::accumulate
 #include <algorithm>
+#include <future>
 
 
 /**\
@@ -43,6 +44,7 @@ public:
         barrierValue(barrierVal), barrierType(barrierType){}
 
     double calculatePrice(double spot, unsigned unifStartSeed, int numScenarios);
+    double calculatePrice_par(double spot, unsigned unifStartSeed, int numScenarios); // parallel version
 };
 
 
