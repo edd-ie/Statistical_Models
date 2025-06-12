@@ -32,7 +32,10 @@ add_executable(MachineLearning main.cpp
         Models/EquityPriceGenerator.cpp
         Models/EquityPriceGenerator.h
         Test/TestFile.cpp
-        Test/TestFile.h)
+        Test/TestFile.h
+        Utilities/Date.cpp
+        Utilities/Date.h
+)
 
 # Link against CURL
 target_link_libraries(${PROJECT_NAME} PRIVATE CURL::libcurl nlohmann_json::nlohmann_json)

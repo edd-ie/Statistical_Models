@@ -19,10 +19,12 @@
 #include "../Models/BlackScholes.h"
 #include "../Options/OptionInfo.h"
 #include "../Models/MonteCarlo.h"
+#include "../Utilities/Date.h"
 
 void testZmodel();
 void testBlackScholes();
 void testMonteCarlo();
+void testDate();
 
 
 #endif //TESTFILE_H

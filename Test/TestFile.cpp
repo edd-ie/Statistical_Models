@@ -118,3 +118,56 @@ void testMonteCarlo() {
     printf("Computed option value in this case is $%.2f\n Expect : $7.83\n\n", opt_val);
 
 }
+
+
+void testDate() {
+    Act365 act_365{};
+    Act360 act_360{};
+    Thirty360 thirty_360{};
+
+    Date sd_01{2021, 4, 26};
+    Date ed_01{2023, 10, 26};
+
+    Date sd_02{2022, 10, 10};
+    Date ed_02{2023, 4, 10};
+
+    // --- Act/365 Day Count Convention ---
+    std::cout << "\n--- Act/365 Day Count ---\n";
+    double yf_act_365_01 = act_365.year_fraction(sd_01, ed_01); // 2.50137
+    std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (Act/365): {:.5f} (Expected: 2.50137)\n",
+                              sd_01.year(), sd_01.month(), sd_01.day(), // <--- CALLING THE GETTERS
+                              ed_01.year(), ed_01.month(), ed_01.day(), // <--- CALLING THE GETTERS
+                              yf_act_365_01);
+
+    double yf_act_365_02 = act_365.year_fraction(sd_02, ed_02); // 0.49863
+    std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (Act/365): {:.5f} (Expected: 0.49863)\n",
+                              sd_02.year(), sd_02.month(), sd_02.day(), // <--- CALLING THE GETTERS
+                              ed_02.year(), ed_02.month(), ed_02.day(), // <--- CALLING THE GETTERS
+                              yf_act_365_02);
+
+    // --- Act/360 Day Count Convention ---
+    std::cout << "\n--- Act/360 Day Count ---\n";
+    double yf_act_360_01 = act_360.year_fraction(sd_01, ed_01); // 2.53611
+    std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (Act/360): {:.5f} (Expected: 2.53611)\n",
+                              sd_01.year(), sd_01.month(), sd_01.day(),
+                              ed_01.year(), ed_01.month(), ed_01.day(), yf_act_360_01);
+
+    double yf_act_360_02 = act_360.year_fraction(sd_02, ed_02); // 0.505556
+    std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (Act/360): {:.6f} (Expected: 0.505556)\n",
+                              sd_02.year(), sd_02.month(), sd_02.day(),
+                              ed_02.year(), ed_02.month(), ed_02.day(), yf_act_360_02);
+
+    // --- 30/360 Day Count Convention ---
+    std::cout << "\n--- 30/360 Day Count ---\n";
+    double yf_thirty_01 = thirty_360.year_fraction(sd_01, ed_01); // 2.5
+    std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (30/360): {:.1f} (Expected: 2.5)\n",
+                              sd_01.year(), sd_01.month(), sd_01.day(),
+                              ed_01.year(), ed_01.month(), ed_01.day(), yf_thirty_01);
+
+    double yf_thirty_02 = thirty_360.year_fraction(sd_02, ed_02); // 0.5
+    std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (30/360): {:.1f} (Expected: 0.5)\n",
+                              sd_02.year(), sd_02.month(), sd_02.day(),
+                              ed_02.year(), ed_02.month(), ed_02.day(), yf_thirty_02);
+
+    std::cout << "\n";
+}
