@@ -73,11 +73,11 @@ class BlackScholes {
 
 public:
     BlackScholes(double strike_price, double spot_price, double expiry_time,
-        double rate, PayOffType pay_off):
+        double rate, PayOffType pay_off, double div = 0.0):
         strikePrice(strike_price),
         spotPrice(spot_price),
         expiryTime(expiry_time),
-        dividend(0.0),
+        dividend(div),
         interestRate(rate),
         payOffType(pay_off) {}
 

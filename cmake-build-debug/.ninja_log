@@ -24,3 +24,7 @@
 4465	8983	7715387603928908	MachineLearning.exe	5ff949882803f202
 12	3623	7715389108102114	CMakeFiles/MachineLearning.dir/Test/TestFile.cpp.obj	6ffd0a81db1a9f5b
 3623	8366	7715389144212693	MachineLearning.exe	5ff949882803f202
+21	1081	7715395259021267	CMakeFiles/MachineLearning.dir/Models/BlackScholes.cpp.obj	f583e39f8d14dfd1
+26	4044	7715395259061211	CMakeFiles/MachineLearning.dir/Test/TestFile.cpp.obj	6ffd0a81db1a9f5b
+13	4203	7715395258941210	CMakeFiles/MachineLearning.dir/main.cpp.obj	5f790d237b2da2cb
+4203	7833	7715395300831189	MachineLearning.exe	5ff949882803f202

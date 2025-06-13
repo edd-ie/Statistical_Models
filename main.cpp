@@ -12,10 +12,10 @@
 int main() {
     // testOptionInfo();
 
-    // testBlackScholes();
+    testBlackScholes();
     // testMonteCarlo();
     // testDate();
-    testBond();
+    // testBond();
 
     return 0;
 }

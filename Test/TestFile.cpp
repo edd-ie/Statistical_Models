@@ -56,7 +56,7 @@ void testBlackScholes() {
     double init_vol_guess_2 = 0.15;
     double tol = 1e-6;
     unsigned max_iter = 1000;
-    BlackScholes bsc_impl_vol{strike, spot, time_to_exp, rate, payoff_type};
+    BlackScholes bsc_impl_vol{strike, spot, time_to_exp, rate, payoff_type, dividend};
 
     double impl_vol = BlackScholes::impliedVolatility(bsc_impl_vol, mkt_opt_price,
        init_vol_guess_1, init_vol_guess_2 , tol, max_iter);
@@ -65,8 +65,6 @@ void testBlackScholes() {
     if (!std::isnan(impl_vol))
     {
         cout << format("Call ITM, time to expiration = {}, ", time_to_exp);
-        // Todo: fix implied volatility
-        // expected value =  0.18501
         cout << format("Implied vol = {}\n", impl_vol);
         double opt_val = bsc_impl_vol(impl_vol);
         cout << format("Value of option at implied vol = {}, ", opt_val);
@@ -174,7 +172,7 @@ void testDate() {
 
 
 void testBond() {
-    std::string bond_id = "20 yr bond";             // 20 year bond
+    std::string bond_id = "20 yr bond";             // 20-year bond
     Date dated_date{2023, 5, 8};              // (Mon)
     Date first_coupon_date{2023, 11, 7};      // Short first coupon (Tue)
     Date penultimate_coupon_date{2042, 5, 7}; // (Wed)
