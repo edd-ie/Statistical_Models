@@ -20,11 +20,13 @@
 #include "../Options/OptionInfo.h"
 #include "../Models/MonteCarlo.h"
 #include "../Utilities/Date.h"
+#include "../tools/Bond.h"
 
 void testZmodel();
 void testBlackScholes();
 void testMonteCarlo();
 void testDate();
+void testBond();
 
 
 #endif //TESTFILE_H

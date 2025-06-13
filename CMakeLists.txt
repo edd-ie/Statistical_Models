@@ -35,6 +35,10 @@ add_executable(MachineLearning main.cpp
         Test/TestFile.h
         Utilities/Date.cpp
         Utilities/Date.h
+        Analytics/YieldCurve.cpp
+        Analytics/YieldCurve.h
+        Tools/Bond.cpp
+        Tools/Bond.h
 )
 
 # Link against CURL

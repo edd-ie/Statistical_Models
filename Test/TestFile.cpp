@@ -135,39 +135,71 @@ void testDate() {
     std::cout << "\n--- Act/365 Day Count ---\n";
     double yf_act_365_01 = act_365.year_fraction(sd_01, ed_01); // 2.50137
     std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (Act/365): {:.5f} (Expected: 2.50137)\n",
-                              sd_01.year(), sd_01.month(), sd_01.day(), // <--- CALLING THE GETTERS
-                              ed_01.year(), ed_01.month(), ed_01.day(), // <--- CALLING THE GETTERS
-                              yf_act_365_01);
+            sd_01.year(), sd_01.month(), sd_01.day(), // <--- CALLING THE GETTERS
+            ed_01.year(), ed_01.month(), ed_01.day(), // <--- CALLING THE GETTERS
+            yf_act_365_01);
 
     double yf_act_365_02 = act_365.year_fraction(sd_02, ed_02); // 0.49863
     std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (Act/365): {:.5f} (Expected: 0.49863)\n",
-                              sd_02.year(), sd_02.month(), sd_02.day(), // <--- CALLING THE GETTERS
-                              ed_02.year(), ed_02.month(), ed_02.day(), // <--- CALLING THE GETTERS
-                              yf_act_365_02);
+            sd_02.year(), sd_02.month(), sd_02.day(), // <--- CALLING THE GETTERS
+            ed_02.year(), ed_02.month(), ed_02.day(), // <--- CALLING THE GETTERS
+            yf_act_365_02);
 
     // --- Act/360 Day Count Convention ---
     std::cout << "\n--- Act/360 Day Count ---\n";
     double yf_act_360_01 = act_360.year_fraction(sd_01, ed_01); // 2.53611
     std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (Act/360): {:.5f} (Expected: 2.53611)\n",
-                              sd_01.year(), sd_01.month(), sd_01.day(),
-                              ed_01.year(), ed_01.month(), ed_01.day(), yf_act_360_01);
+            sd_01.year(), sd_01.month(), sd_01.day(),
+            ed_01.year(), ed_01.month(), ed_01.day(), yf_act_360_01);
 
     double yf_act_360_02 = act_360.year_fraction(sd_02, ed_02); // 0.505556
     std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (Act/360): {:.6f} (Expected: 0.505556)\n",
-                              sd_02.year(), sd_02.month(), sd_02.day(),
-                              ed_02.year(), ed_02.month(), ed_02.day(), yf_act_360_02);
+            sd_02.year(), sd_02.month(), sd_02.day(),
+            ed_02.year(), ed_02.month(), ed_02.day(), yf_act_360_02);
 
     // --- 30/360 Day Count Convention ---
     std::cout << "\n--- 30/360 Day Count ---\n";
     double yf_thirty_01 = thirty_360.year_fraction(sd_01, ed_01); // 2.5
     std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (30/360): {:.1f} (Expected: 2.5)\n",
-                              sd_01.year(), sd_01.month(), sd_01.day(),
-                              ed_01.year(), ed_01.month(), ed_01.day(), yf_thirty_01);
+            sd_01.year(), sd_01.month(), sd_01.day(),
+            ed_01.year(), ed_01.month(), ed_01.day(), yf_thirty_01);
 
     double yf_thirty_02 = thirty_360.year_fraction(sd_02, ed_02); // 0.5
     std::cout << std::format("From {}-{:02d}-{:02d} to {}-{:02d}-{:02d} (30/360): {:.1f} (Expected: 0.5)\n",
-                              sd_02.year(), sd_02.month(), sd_02.day(),
-                              ed_02.year(), ed_02.month(), ed_02.day(), yf_thirty_02);
+            sd_02.year(), sd_02.month(), sd_02.day(),
+            ed_02.year(), ed_02.month(), ed_02.day(), yf_thirty_02);
 
     std::cout << "\n";
+}
+
+
+void testBond() {
+    std::string bond_id = "20 yr bond";             // 20 year bond
+    Date dated_date{2023, 5, 8};              // (Mon)
+    Date first_coupon_date{2023, 11, 7};      // Short first coupon (Tue)
+    Date penultimate_coupon_date{2042, 5, 7}; // (Wed)
+    Date maturity_date{2043, 5, 7};   // Regular last coupon period (Thu)
+    int coupon_frequency = 2;
+    double coupon_rate = 0.062;
+    double face_value = 1000.00;
+    
+    // Construction of the bond is then straightforward:
+    Bond bond_20_yr{bond_id, dated_date, first_coupon_date, penultimate_coupon_date,
+        maturity_date, coupon_frequency, coupon_rate, face_value};
+
+    std::vector<Date> unit_bond_maturity_dates{{2023, 10, 11}, {2024, 1, 10},{2024, 4, 10},
+        {2024, 10, 10}, {2025, 10, 10}, {2026, 10, 12}, {2028, 10, 10}, {2030, 10, 10},
+        {2033, 10, 10}, {2038, 10, 11}, {2043, 10, 12}, {2053, 10, 10}};
+
+    std::vector<double> unit_bond_prices{0.999945, 0.994489, 0.988210,
+        0.973601, 0.939372, 0.901885, 0.827719, 0.759504,
+        0.670094, 0.547598, 0.448541, 0.300886    };
+
+    Date yc_settle_date{2023, 10, 10};
+    Date bond_settle_date = yc_settle_date;
+
+    LinearInterpYieldCurve yc{yc_settle_date, unit_bond_maturity_dates, unit_bond_prices};
+    double value = bond_20_yr.discounted_value(bond_settle_date, yc);
+
+    std::cout<< std::format("Bond payment after 20yrs : ${}", value);
 }

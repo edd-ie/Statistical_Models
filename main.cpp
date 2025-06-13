@@ -14,7 +14,8 @@ int main() {
 
     // testBlackScholes();
     // testMonteCarlo();
-    testDate();
+    // testDate();
+    testBond();
 
     return 0;
 }
