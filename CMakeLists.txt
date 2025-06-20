@@ -7,40 +7,45 @@ set(CMAKE_CXX_STANDARD 26)
 find_package(CURL CONFIG REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
 
+# --- Find Boost components that you need (including Boost.Math) ---
+# This will locate the Boost libraries installed by Vcpkg
+find_package(Boost REQUIRED COMPONENTS math multi_array)
 
 
 
 add_executable(MachineLearning main.cpp
-        Dataset.h
         Dataset.cpp
-        Utilities/Logger.h
         Utilities/Logger.cpp
         Utilities/FileReader.cpp
-        Utilities/FileReader.h
-        Tables/ZScore.h
         Tables/ZScore.cpp
-        Models/BlackScholes.h
         Models/BlackScholes.cpp
         Options/Payoff.cpp
-        Options/Payoff.h
         Options/OptionInfo.cpp
-        Options/OptionInfo.h
         Models/BinomialLattice.cpp
-        Models/BinomialLattice.h
         Models/MonteCarlo.cpp
-        Models/MonteCarlo.h
         Models/EquityPriceGenerator.cpp
-        Models/EquityPriceGenerator.h
         Test/TestFile.cpp
-        Test/TestFile.h
         Utilities/Date.cpp
-        Utilities/Date.h
         Analytics/YieldCurve.cpp
-        Analytics/YieldCurve.h
         Tools/Bond.cpp
-        Tools/Bond.h
+)
+
+# If you have specific include directories needed for your own headers (e.g., "Test", "Utilities", "Tables", "Models", "Options")
+target_include_directories(MachineLearning PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR} # Include current directory for things like TestFile.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/Utilities
+        ${CMAKE_CURRENT_SOURCE_DIR}/Tables
+        ${CMAKE_CURRENT_SOURCE_DIR}/Models
+        ${CMAKE_CURRENT_SOURCE_DIR}/Options
+        ${CMAKE_CURRENT_SOURCE_DIR}/Tools
+        ${CMAKE_CURRENT_SOURCE_DIR}/Test
+        ${CMAKE_CURRENT_SOURCE_DIR}/Analytics
 )
 
 # Link against CURL
-target_link_libraries(${PROJECT_NAME} PRIVATE CURL::libcurl nlohmann_json::nlohmann_json)
+target_link_libraries(${PROJECT_NAME} PRIVATE CURL::libcurl
+        nlohmann_json::nlohmann_json
+        Boost::math
+        Boost::multi_array)
+
 set(nlohmann-json_IMPLICIT_CONVERSIONS OFF)

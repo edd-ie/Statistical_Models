@@ -27,6 +27,7 @@ void testBlackScholes();
 void testMonteCarlo();
 void testDate();
 void testBond();
+void testBinomialLattice();
 
 
 #endif //TESTFILE_H

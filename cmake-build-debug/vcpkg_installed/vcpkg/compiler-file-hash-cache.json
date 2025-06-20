@@ -10,5 +10,17 @@
     "hash" : "818b51c68d25d3f1ea407b16167c0929f9e9540b",
     "size" : 3730120,
     "timestamp" : 1749151857
+  },
+  "C:/Qt/Tools/mingw1310_64/bin/x86_64-w64-mingw32-g++.exe" : 
+  {
+    "hash" : "f216e376f0fdf83493b526e0ac76ce75676b9011",
+    "size" : 2618368,
+    "timestamp" : 1684962292
+  },
+  "C:/Qt/Tools/mingw1310_64/bin/x86_64-w64-mingw32-gcc.exe" : 
+  {
+    "hash" : "021262d6b436b57047a7cf1bb9b719312989ae7b",
+    "size" : 2615296,
+    "timestamp" : 1684962310
   }
 }

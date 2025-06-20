@@ -73,7 +73,7 @@ while test "$#" -gt 0; do
     ;;
 
   --cc)
-    echo 'C:/Program Files/JetBrains/CLion 2024.3/bin/mingw/bin/gcc.exe'
+    echo 'C:/Qt/Tools/mingw1310_64/bin/x86_64-w64-mingw32-gcc.exe'
     ;;
 
   --prefix)

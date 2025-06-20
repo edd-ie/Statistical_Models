@@ -201,3 +201,22 @@ void testBond() {
 
     std::cout<< std::format("Bond payment after 20yrs : ${}", value);
 }
+
+void testBinomialLattice() {
+    double strike =  40.0, rf_rate = 0.06, mkt_vol = 0.2, time_to_exp = 1.0;
+    unsigned time_steps = 4;
+    double spot = 36.0;
+    // ITM American put option
+    auto put_ptr = make_unique<PutPayoff>(strike);      // put_ptr = "put pointer"
+    OptionInfo put{std::move(put_ptr), time_to_exp};
+    // put contains a unique_ptr -- must move
+
+    BinomialLattice put_pricer{std::move(put), mkt_vol, rf_rate, time_steps};
+    double opt_price1 = put_pricer.calculatePrice(spot, OptType::American);     // 4.54
+
+    // Compare with a European case:
+    double opt_price2 = put_pricer.calculatePrice(spot, OptType::European);                // 3.98
+
+    std::cout<< std::format("The BinomialLattice pricing of na option \nAmerican ${}  European ${}",
+        opt_price1, opt_price2);
+}

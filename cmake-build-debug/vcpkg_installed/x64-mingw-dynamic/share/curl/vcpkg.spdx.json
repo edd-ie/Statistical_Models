@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/curl-x64-mingw-dynamic-8.13.0#1-46121f5c-c813-4be1-8627-84c89195d483",
-  "name": "curl:x64-mingw-dynamic@8.13.0#1 8214ab35fa9c12914692498c6e3d040d29161edc85cbe22887f7a1ed40ef084a",
+  "documentNamespace": "https://spdx.org/spdxdocs/curl-x64-mingw-dynamic-8.13.0#1-7eeed997-db33-48fe-9dfd-b9bc05102a98",
+  "name": "curl:x64-mingw-dynamic@8.13.0#1 4ff5a04334baf3fa2de03ff19a5c4e027fac49006455fbdebce9d477a3cfb25d",
   "creationInfo": {
     "creators": [
       "Tool: vcpkg-2025-04-16-f9b6c6917b23c1ccf16c1a9f015ebabf8f615045"
     ],
-    "created": "2025-06-06T17:25:09Z"
+    "created": "2025-06-20T17:20:15Z"
   },
   "relationships": [
     {
@@ -134,7 +134,7 @@
     {
       "name": "curl:x64-mingw-dynamic",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "8214ab35fa9c12914692498c6e3d040d29161edc85cbe22887f7a1ed40ef084a",
+      "versionInfo": "4ff5a04334baf3fa2de03ff19a5c4e027fac49006455fbdebce9d477a3cfb25d",
       "downloadLocation": "NONE",
       "licenseConcluded": "curl AND ISC AND BSD-3-Clause",
       "licenseDeclared": "NOASSERTION",

@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/nlohmann-json-x64-mingw-dynamic-3.12.0-637f1434-0101-4bb3-bd6f-a67a81560656",
-  "name": "nlohmann-json:x64-mingw-dynamic@3.12.0 aab32a0dd9d39037e992fed72a33c81939c41e77e30eb8e08368173682b7ee8a",
+  "documentNamespace": "https://spdx.org/spdxdocs/nlohmann-json-x64-mingw-dynamic-3.12.0-e76e4cab-ab9a-40a9-a22d-722e4e42f075",
+  "name": "nlohmann-json:x64-mingw-dynamic@3.12.0 77638b28e8376f71ccd259dec88ea8e57102e27383053a8c2dc29fc1163f21d6",
   "creationInfo": {
     "creators": [
       "Tool: vcpkg-2025-04-16-f9b6c6917b23c1ccf16c1a9f015ebabf8f615045"
     ],
-    "created": "2025-06-06T17:25:18Z"
+    "created": "2025-06-20T17:20:24Z"
   },
   "relationships": [
     {
@@ -74,7 +74,7 @@
     {
       "name": "nlohmann-json:x64-mingw-dynamic",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "aab32a0dd9d39037e992fed72a33c81939c41e77e30eb8e08368173682b7ee8a",
+      "versionInfo": "77638b28e8376f71ccd259dec88ea8e57102e27383053a8c2dc29fc1163f21d6",
       "downloadLocation": "NONE",
       "licenseConcluded": "MIT",
       "licenseDeclared": "NOASSERTION",

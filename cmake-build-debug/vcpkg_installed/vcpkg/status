@@ -2,7 +2,7 @@ Package: vcpkg-cmake
 Version: 2024-04-23
 Architecture: x64-mingw-dynamic
 Multi-Arch: same
-Abi: 672733d1d69c945f2546b2822bc4cd290ffb176572576bb46ced317724dfbcb8
+Abi: 57ce16f93630189c55d77f05e64cdc2711ca142274b03cc0d9d349d50dda51e4
 Status: install ok installed
 
 Package: zlib
@@ -10,7 +10,7 @@ Version: 1.3.1
 Depends: vcpkg-cmake
 Architecture: x64-mingw-dynamic
 Multi-Arch: same
-Abi: 193dc2d5375abcf385d530f5241782e0b3d1da831c4bf4528a25099869881ce4
+Abi: f39f404c8b25288707dea9b18625b3a2391c61c584a4d870709053888d2626df
 Description: A compression library
 Status: install ok installed
 
@@ -18,7 +18,7 @@ Package: vcpkg-cmake-config
 Version: 2024-05-23
 Architecture: x64-mingw-dynamic
 Multi-Arch: same
-Abi: e8be8210e7f117ca0d6e3f6ca26f350e06392ae26090a67c54c5ea0b745f0a42
+Abi: d3c0277454a45d39cb84a08258e88bb3815649688e70f2381b6ed5b501c5bfd7
 Status: install ok installed
 
 Package: curl
@@ -27,7 +27,7 @@ Port-Version: 1
 Depends: vcpkg-cmake, vcpkg-cmake-config, zlib
 Architecture: x64-mingw-dynamic
 Multi-Arch: same
-Abi: 8214ab35fa9c12914692498c6e3d040d29161edc85cbe22887f7a1ed40ef084a
+Abi: 4ff5a04334baf3fa2de03ff19a5c4e027fac49006455fbdebce9d477a3cfb25d
 Description: A library for transferring data with URLs
 Default-Features: non-http, ssl
 Status: install ok installed
@@ -65,7 +65,383 @@ Version: 3.12.0
 Depends: vcpkg-cmake, vcpkg-cmake-config
 Architecture: x64-mingw-dynamic
 Multi-Arch: same
-Abi: aab32a0dd9d39037e992fed72a33c81939c41e77e30eb8e08368173682b7ee8a
+Abi: 77638b28e8376f71ccd259dec88ea8e57102e27383053a8c2dc29fc1163f21d6
 Description: JSON for Modern C++
+Status: install ok installed
+
+Package: vcpkg-boost
+Version: 2025-03-29
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 13543df139215d9a3a4dcb293a54e38f6a0667517d3dbba35a99ec9e2ef6ef87
+Status: install ok installed
+
+Package: boost-uninstall
+Version: 1.88.0
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 3a15a9c10f28a43313fbdb8f51bf958921556c970172b735055975db665c0439
+Description: Internal vcpkg port used to uninstall Boost
+Status: install ok installed
+
+Package: boost-cmake
+Version: 1.88.0
+Depends: boost-uninstall, vcpkg-boost
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 5698d3bb90767bb1058c5e249d96edc78d97002ba85a6da3ee3fe9d046be26ad
+Description: Boost cmake module
+Status: install ok installed
+
+Package: boost-headers
+Version: 1.88.0
+Depends: boost-cmake
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 757c09ecdcba2416d7c9dce6ed53bfee02acdc06089eb824be76618d9349f769
+Description: Boost headers module
+Status: install ok installed
+
+Package: boost-config
+Version: 1.88.0
+Depends: boost-cmake, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 338773afb0e28307ae9f0e74ff8549b23ea4b0ca2f087dd1b3e0f0994869482a
+Description: Boost config module
+Status: install ok installed
+
+Package: boost-assert
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 4ad5f4c3f963c1eda77f224bcb044aabb15fb181ef5cc679a021781856680c1b
+Description: Boost assert module
+Status: install ok installed
+
+Package: boost-throw-exception
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: ccb0b04606c92d23b251fe6c6ead599656e16a019279d39961c242fbbe6d433b
+Description: Boost throw_exception module
+Status: install ok installed
+
+Package: boost-static-assert
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 13996e74d2fd64e7fe354816d8aa7e3be829a3507a3fd42d0e280cb9b2a808f6
+Description: Boost static_assert module
+Status: install ok installed
+
+Package: boost-type-traits
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers, boost-static-assert
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 5784e15eda487dfe7dc6aec0122a2bdd641803248fab93c82b1c346da57303e2
+Description: Boost type_traits module
+Status: install ok installed
+
+Package: boost-preprocessor
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 48d1e14486c06412bc4e01f2568230532d51fbf59b291bc0f3b1a67edadd617b
+Description: Boost preprocessor module
+Status: install ok installed
+
+Package: boost-io
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 7067e2ba8885a61f04c0865275cc038b7fce71f5481e6655ec5a5e18c7bba522
+Description: Boost io module
+Status: install ok installed
+
+Package: boost-core
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers, boost-static-assert, boost-throw-exception
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 63c931da362532ef7e18b7e842c283d09ad2692488d237cc57600a490333aced
+Description: Boost core module
+Status: install ok installed
+
+Package: boost-utility
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-core, boost-headers, boost-io, boost-preprocessor, boost-throw-exception, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 28c999fc339a142cc9f77e824bee4cb5dfc3d05d7ecd8a776e02bb002a8390ff
+Description: Boost utility module
+Status: install ok installed
+
+Package: boost-predef
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 47fe28233896269ff2b7f78f25958f31f1adbdf2539a9b3f2cf4fd5cb15937db
+Description: Boost predef module
+Status: install ok installed
+
+Package: boost-winapi
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers, boost-predef
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 484410e0a5c7709c278f9e2344675690a6e588b378edb8a847d5221f2d37e2d5
+Description: Boost winapi module
+Status: install ok installed
+
+Package: boost-mp11
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 189cff878f7ff8decfdeb6ccc5beeb66995ab97be18ab36b0bd4da6a739287df
+Description: Boost mp11 module
+Status: install ok installed
+
+Package: boost-variant2
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers, boost-mp11
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 8bddc0ab5a1d483ab5cfd1b83eca451a202e2392d6ef4ed7142a5e25189d44f9
+Description: Boost variant2 module
+Status: install ok installed
+
+Package: boost-system
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers, boost-throw-exception, boost-variant2, boost-winapi
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 0751c43df8d0cd07c79809ff9e2455a120a96dcba3b56c87be6b8655b75be80d
+Description: Boost system module
+Status: install ok installed
+
+Package: boost-integer
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-core, boost-headers, boost-static-assert, boost-throw-exception, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 45208a32ca9cef08dc7316c5dcdb01e44f50215b833ce789fa9a4096f2aecbd5
+Description: Boost integer module
+Status: install ok installed
+
+Package: boost-move
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: c71105401fb4368d05a35b71f2f3ce0bf6192ef2fbac36f4fa4faad90946b9da
+Description: Boost move module
+Status: install ok installed
+
+Package: boost-describe
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers, boost-mp11
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 3308cd52e10905aaf2c69285f62d77157b61ca0fdc3e54a08eb22dda4d5d8290
+Description: Boost describe module
+Status: install ok installed
+
+Package: boost-container-hash
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-describe, boost-headers, boost-mp11
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 46ec95dc3b2922084c5b60675389d878849e3ea664b600b4a1cd514068c8d446
+Description: Boost container_hash module
+Status: install ok installed
+
+Package: boost-dynamic-bitset
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-container-hash, boost-core, boost-headers, boost-integer, boost-move, boost-static-assert, boost-throw-exception
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 51d102d9072d2bb2c26d613fd1ad2172a5336d5e364d17b9be809e3dacb1fe3e
+Description: Boost dynamic_bitset module
+Status: install ok installed
+
+Package: boost-random
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-core, boost-dynamic-bitset, boost-headers, boost-integer, boost-io, boost-static-assert, boost-system, boost-throw-exception, boost-type-traits, boost-utility
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 9b728facd0a8f926b5e3a53c1a7f5ed7e4aff2abcd80fda59cb81a61e46c2280
+Description: Boost random module
+Status: install ok installed
+
+Package: boost-intrusive
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers, boost-move
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: dac9f86740c980b3844fc2318935924da6a860dcee4f3560cf4277c3b4878ecd
+Description: Boost intrusive module
+Status: install ok installed
+
+Package: boost-container
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers, boost-intrusive, boost-move
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 8c5ecd8de2e1c170f078e4b5602322dbb2ddf0eae61bb88c1f59b105eb4a2d59
+Description: Boost container module
+Status: install ok installed
+
+Package: boost-lexical-cast
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-container, boost-core, boost-headers, boost-throw-exception, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 7b2273619496df4d72037247376fde91d9983e8a0f7f4f34a5be05a6919f5f31
+Description: Boost lexical_cast module
+Status: install ok installed
+
+Package: boost-concept-check
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers, boost-preprocessor, boost-static-assert, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 265afb7cea23b9f8402fa14e8e049b24d05289dece27618920ffd4f2c73834c5
+Description: Boost concept_check module
+Status: install ok installed
+
+Package: boost-math
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-concept-check, boost-config, boost-core, boost-headers, boost-integer, boost-lexical-cast, boost-predef, boost-random, boost-static-assert, boost-throw-exception
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 3d9bccd2bf24d08223ec15abea6a08812bf513f87f32fbabb83c4844d426bf6d
+Description: Boost math module
+Status: install ok installed
+
+Package: boost-mpl
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-core, boost-headers, boost-predef, boost-preprocessor, boost-static-assert, boost-type-traits, boost-utility
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 9b4445effcd7483f97eba4169f96c881add95e494ffd363dc600125a9d2058ca
+Description: Boost mpl module
+Status: install ok installed
+
+Package: boost-optional
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-core, boost-headers, boost-throw-exception, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 3cab0133ce69a21aa431e531e93b1115d0cedd8f1b8c49cd51eab1b68340a454
+Description: Boost optional module
+Status: install ok installed
+
+Package: boost-typeof
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 938f3febd9a09eadadc26e5759826c123efd38e8db220ae04600c68dbfe9ea39
+Description: Boost typeof module
+Status: install ok installed
+
+Package: boost-tuple
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-core, boost-headers, boost-static-assert, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: addc6de4657e44573b927d26dcf2d1aa24fbed495bf640b7b4d99b7e2d53d2cd
+Description: Boost tuple module
+Status: install ok installed
+
+Package: boost-detail
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-core, boost-headers, boost-preprocessor, boost-static-assert, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 1f97b696945f266c05b1880c557964a4312408144b778315d7ae8ccf53171205
+Description: Boost detail module
+Status: install ok installed
+
+Package: boost-function-types
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-core, boost-detail, boost-headers, boost-mpl, boost-preprocessor, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 34748528e58a99d6225dac5a001749db2d990de974b04d8b82ced771dd212b72
+Description: Boost function_types module
+Status: install ok installed
+
+Package: boost-bind
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-core, boost-headers
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 43b214a89f5410ad0c03bf1ffe9c3ef6ecc1e293349ffdecd6bcab8200f8ddb6
+Description: Boost bind module
+Status: install ok installed
+
+Package: boost-function
+Version: 1.88.0
+Depends: boost-assert, boost-bind, boost-cmake, boost-config, boost-core, boost-headers, boost-throw-exception
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: f14f1d92138c98d596fa3d044855a2c677778eea98473995c93ae22cbf360f4c
+Description: Boost function module
+Status: install ok installed
+
+Package: boost-functional
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-core, boost-function, boost-function-types, boost-headers, boost-mpl, boost-preprocessor, boost-type-traits, boost-typeof, boost-utility
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 6ed5ba1ebfb61a7fdeca6863c36da153559447f8a4c60490631d60e9881e9ad6
+Description: Boost functional module
+Status: install ok installed
+
+Package: boost-fusion
+Version: 1.88.0
+Depends: boost-cmake, boost-config, boost-container-hash, boost-core, boost-function-types, boost-functional, boost-headers, boost-mpl, boost-preprocessor, boost-static-assert, boost-tuple, boost-type-traits, boost-typeof, boost-utility
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: bd1dfa13cc69c3410aaf10cb6d154989f9611f682afc4729ad8cc1094e32da18
+Description: Boost fusion module
+Status: install ok installed
+
+Package: boost-iterator
+Version: 1.88.0
+Depends: boost-cmake, boost-concept-check, boost-config, boost-core, boost-detail, boost-fusion, boost-headers, boost-mp11, boost-mpl, boost-optional, boost-type-traits, boost-utility
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: d96b117257c5b42471147484c7e4ac1868b45d085995c0307640f9e702d89550
+Description: Boost iterator module
+Status: install ok installed
+
+Package: boost-array
+Version: 1.88.0
+Depends: boost-assert, boost-cmake, boost-config, boost-headers, boost-static-assert, boost-throw-exception
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 9d28f6ecbbde2c1d521d0a79d4d1c8fcd1c91794b47a9bc9451634a75a7654ee
+Description: Boost array module
+Status: install ok installed
+
+Package: boost-multi-array
+Version: 1.88.0
+Depends: boost-array, boost-assert, boost-cmake, boost-concept-check, boost-config, boost-core, boost-functional, boost-headers, boost-iterator, boost-mpl, boost-static-assert, boost-type-traits
+Architecture: x64-mingw-dynamic
+Multi-Arch: same
+Abi: 8526784ebc07e35226b040c426d3ff7daf566517dc2ed1cf06a51c59f6cc4ccf
+Description: Boost multi_array module
 Status: install ok installed
 

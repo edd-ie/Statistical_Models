@@ -5,10 +5,14 @@
   "dependencies" : [ {
     "name" : "curl",
     "version>=" : "8.13.0#1"
-  },
-    {
-      "name": "nlohmann-json",
-      "version>=": "3.11.3"
-    }
-  ]
+  }, {
+    "name" : "nlohmann-json",
+    "version>=" : "3.11.3"
+  }, {
+    "name" : "boost-math",
+    "version>=" : "1.88.0"
+  }, {
+    "name" : "boost-multi-array",
+    "version>=" : "1.88.0"
+  } ]
 }
